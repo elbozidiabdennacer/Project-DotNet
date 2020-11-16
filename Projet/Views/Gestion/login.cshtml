@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Log in";
+   
+}
+<link rel='stylesheet' type='text/css' href="~/FichierCss/Login.css">
+<div class='container-box'>
+        <form method='post' action='EstUser'>
+
+
+            <p class="cnx">Connexion</p><br><br>
+
+            <div class='name'>
+                <label for='Email_l'>Email :</label>
+
+                <input class='input3' name='Email_l' id='Email_l' type='Email' placeholder='Email' /><br>
+            </div>
+
+            <br>
+
+            <div class='name'>
+                <label for='passl'>Password :</label>
+                <input class='input3' name='passl' id='passl' type='password' placeholder='Password' />
+            </div>
+            <br><br>
+            <div class='name'>
+                <input class='input2' name='submit' type='submit' value='Log in' />
+            </div>
+            <div>
+                <a href="signin" class="alog">Créer un compte</a>
+            </div>
+        </form>
+</div>
+
+<div class='login'>
+    <p class='p1'>Log in</p>
+</div>
+
+
+

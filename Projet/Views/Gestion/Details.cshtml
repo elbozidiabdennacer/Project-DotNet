@@ -1,0 +1,121 @@
+﻿
+@model Project.Models.Livre
+
+@{
+    Project.Models.Livre livre = Model;
+    List<Project.Models.Categorie> cats = ViewBag.categ;
+}
+
+
+<link rel='stylesheet' type='text/css' href='~/FichierCss/vente.css'>
+<style type="text/css">
+
+    a {
+        text-decoration: none;
+    }
+</style>
+<div class="info">
+
+    <div class="slid">
+        <img src="~/Image/Slide/livre6.jpg" alt="" id="slide" class="slide">
+    </div>
+
+    <ul class="list">
+
+        <li class="list2">
+            Connexion
+            <ul>
+                <li><a href="Login.jsp">Login</a></li>
+                <li><a href="Signin.jsp">Signin</a></li>
+                <li><a href="Logout">Logout</a></li>
+            </ul>
+        </li>
+
+        <li class="list2"><a href="vuePanier">Panier</a></li>
+
+        <li class="list2">
+            Contact moi
+            <ul>
+                <li>Email :abdennacer@gmail.com</li>
+                <li>Télé  :0621547589</li>
+            </ul>
+        </li>
+
+    </ul>
+
+</div>
+
+<div class="jsp_vente">
+
+    <div><img class="img" src="~/@livre.pthimg"></div>
+
+    <div class="tab">
+        <h4>Information de livre</h4>
+        <hr>
+        <table>
+
+            <tr>
+                <th>Nom Livre</th>
+                <td>@livre.Nom</td>
+            </tr>
+            <tr>
+                <th>Auteur de livre</th>
+                <td>@livre.Auteur</td>
+            </tr>
+            <tr>
+                <th>Date d'edition</th>
+                <td>@livre.date_edition</td>
+            </tr>
+            <tr>
+                <th>Le prix</th>
+                <td>@livre.Prix Dhs</td>
+            </tr>
+
+        </table>
+        <hr>
+        <br>
+        <br><br>
+    </div>
+    <br>
+    <div class="divbtn">
+        <form method='post' action="AddAuPanier?idl=@livre.IdBk&sender=det">
+
+            <input type="submit" name="btne" value="Ajeter au panier" class="btn" />
+
+        </form>
+    </div>
+</div>
+
+<div class='Your_Book'>
+    <p class='p1'>yourbook</p>
+    <div class='span'>
+        <span class="welcome" id="welcome"></span>
+
+    </div>
+
+    <div class='bien'>
+
+        <div class='menu' id="menu" onclick="myclick2()">
+            <div class='carre'></div>
+            <div class='carre'></div>
+            <div class='carre'></div>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="panier" id="panier">
+    <ul>
+
+        <li>@Html.ActionLink("Accueil", "Accueil")</li>
+        @foreach (var item in cats)
+        {
+
+            <li>@Html.ActionLink(@item.NomB, "Categorie", new { ncat = item.NomB })</li>
+        }
+
+    </ul>
+</div>
+
+

@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+    <link rel='stylesheet' type='text/css' href="~/FichierCss/admin.css" />
+    <body>
+
+        <div class="info">
+
+            <div class="slid">
+                <img src="~/Image/Slide/livre6.jpg" alt="" id="slide" class="slide">
+            </div>
+
+            <ul class="list">
+
+                <li class="list2">
+                    Connexion
+                    <ul>
+                        <li> @Html.ActionLink("Logout", "Logout", "Gestion/") </li>
+                    </ul>
+                </li>
+
+                <li class="list2">
+                    Contact moi
+                    <ul>
+                        <li>Email :abdennacer@gmail.com</li>
+                        <li>Télé  :0621547589</li>
+                    </ul>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="tab-books">
+
+            <ul>
+                <li><a href="setArticle?op=''">Ajouter des livres ou categorie</a></li>
+                <li><a href="getCommandes">Voir les commandes</a></li>
+                <li><a href="getClients">Voir les clients</a></li>
+            </ul>
+
+        </div>
+
+        <div class='Your_Book'>
+            <p class='p1'>yourbook</p>
+            <div class='span'>
+                <span class="welcome" id="welcome"></span>
+
+            </div>
+
+        </div>
+
+    </body>
+    
+

@@ -1,0 +1,99 @@
+﻿@model System.Collections.Generic.List<Project.Models.Livre>
+
+@{
+    List<Project.Models.Livre> Livres = Model;
+
+    List<Project.Models.Categorie> cats = ViewBag.categ;
+
+
+}
+
+
+<link rel='stylesheet' type='text/css' href='~/FichierCss/Accueil.css'>
+<div class="info">
+
+    <div class="slid">
+        <img src="~/Image/Slide/livre6.jpg" id="slide" class="slide">
+    </div>
+
+    <ul class="list">
+
+        <li class="list2">
+            Connexion
+            <ul>
+                <li><a href="login">Login</a></li>
+                <li><a href="signin">Signin</a></li>
+                <li><a href="Logout">Logout</a></li>
+            </ul>
+        </li>
+
+        <li class="list2"><a href="vuePanier">Panier</a></li>
+
+        <li class="list2">
+            Contact moi
+            <ul>
+                <li>Email :abdennacer@gmail.com</li>
+                <li>Télé  :0621547589</li>
+            </ul>
+        </li>
+
+    </ul>
+
+</div>
+
+
+<div class="tab-books">
+
+    <table>
+
+        @for (var i = 0; i < Livres.Count; i++)
+        {
+            int j = 0;
+            <tr>
+                @while (j < 4 && i < Livres.Count)
+                {
+
+                    <td><a href="Details?id=@Livres[i].IdBk"><img src="~/@Livres[i].pthimg" /><br/>@Livres[i].Nom<br /></a><br /></td>
+
+                    j++;
+                    i++;
+                }
+            </tr>
+
+        }
+
+    </table>
+
+</div>
+
+<div class='Your_Book'>
+    <p class='p1'>yourbook</p>
+    <div class='span'>
+        <span class="welcome" id="welcome"></span>
+
+    </div>
+
+    <div class='bien'>
+
+        <div class='menu' id="menu" onclick="myclick2()">
+            <div class='carre'></div>
+            <div class='carre'></div>
+            <div class='carre'></div>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="panier" id="panier">
+    <ul>
+
+        <li>@Html.ActionLink("Accueil", "Accueil")</li>
+        @foreach (var item in cats)
+        {
+
+            <li>@Html.ActionLink(@item.NomB, "Categorie", new { ncat = item.NomB })</li>
+        }
+
+    </ul>
+</div>
